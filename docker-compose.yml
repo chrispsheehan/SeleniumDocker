@@ -1,0 +1,9 @@
+version: "2.4"
+services:
+  canopy-reporter:
+    image: mcr.microsoft.com/dotnet/core/sdk:2.1
+    network_mode: "host" 
+    environment:
+     - USER_NAME=BOB
+   
+   
