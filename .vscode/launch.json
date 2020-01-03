@@ -5,20 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "preLaunchTask": "build",            
-            "processId": "${command:pickRemoteProcess}",
-            "pipeTransport": {
-                "pipeCwd": "${workspaceFolder}",
-                "pipeProgram": "docker",
-                "pipeArgs": [ "exec", "-i", "sunshine-downloader" ],
-                "debuggerPath": "/vsdbg/vsdbg",
-                "quoteArgs": false
-            }
-        },
-        {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
@@ -29,6 +15,5 @@
             "stopAtEntry": false,
             "console": "internalConsole"
         }
-
     ]
 }
