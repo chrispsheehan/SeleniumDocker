@@ -15,7 +15,7 @@ namespace Sandpit
             chromeOptions.AddArgument("--window-size=1920,1080");
             chromeOptions.AddArgument("--start-maximized");
 
-            IWebDriver driver = new ChromeDriver(System.AppContext.BaseDirectory, chromeOptions);
+            IWebDriver driver = new ChromeDriver(chromeOptions);
 
             driver.Url = "https://www.bbc.co.uk/";
 
