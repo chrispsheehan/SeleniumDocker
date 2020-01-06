@@ -11,6 +11,6 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     unzip -d /usr/local/bin chromedriver_linux64.zip && \
     rm chromedriver_linux64.zip
 
-RUN dotnet build /src
 WORKDIR /src/bin/Debug/netcoreapp3.1
-CMD dotnet Sandpit.dll
+CMD dotnet build /src && \
+    dotnet Sandpit.dll
