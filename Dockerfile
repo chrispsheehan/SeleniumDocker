@@ -11,6 +11,13 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     unzip -d /usr/local/bin chromedriver_linux64.zip && \
     rm chromedriver_linux64.zip
 
+# https://www.aaron-powell.com/posts/2019-04-04-debugging-dotnet-in-docker-with-vscode/
+RUN apt update && \
+    apt install unzip && \
+    curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l /vsdbg    
+
+RUN dotnet build /src 
+
 WORKDIR /src/bin/Debug/netcoreapp3.1
-CMD dotnet build /src && \
-    dotnet Sandpit.dll
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]

@@ -4,7 +4,7 @@
 ```docker build -t sandbox-thing .```
 
 ### Run it
-```docker run sandbox-thing```
+```docker run -v [SolutionFolder]/src:/src sandbox-thing```
 
-### Debug it
-```docker run -it sandbox-thing bash```
+### Inspect it
+```docker run -v [SolutionFolder]/src:/src -it sandbox-thing bash```

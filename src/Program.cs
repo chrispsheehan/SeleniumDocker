@@ -25,7 +25,7 @@ namespace Sandpit
 
             driver.FindElement(By.LinkText("Rugby Union")).Click();
 
-            Console.WriteLine($"the page title is now: {driver.Title}");
+            Console.WriteLine($"the page title is now badgers: {driver.Title}");
 
             driver.Quit();
         }

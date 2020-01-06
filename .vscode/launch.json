@@ -14,6 +14,22 @@
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             "console": "internalConsole"
-        }
+        },
+        {
+            "name": "Docker Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport": {
+                "pipeProgram": "docker",
+                "pipeArgs": [ "exec", "-i", "debug_box", "dotnet", "Sandpit.dll" ],
+                "debuggerPath": "/root/vsdbg/vsdbg",
+                "pipeCwd": "${workspaceRoot}",
+                "quoteArgs": false
+            },
+            "sourceFileMap": {
+                "/home/ExampleAccount/ExampleProject": "${workspaceRoot}"
+            }
+        }               
     ]
 }
